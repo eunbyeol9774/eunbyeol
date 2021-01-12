@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Fri Dec 11 15:29:31 KST 2020
+spring-test-5.0.7.RELEASE-sources.jar>central=
+spring-test-5.0.7.RELEASE.jar>central=
+spring-test-5.0.7.RELEASE.pom>central=
