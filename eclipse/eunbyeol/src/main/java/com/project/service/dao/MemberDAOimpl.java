@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 
 import com.project.vo.MemberVO;
 
-@Service
-public class MemberDAOlmpl implements MemberDAO {
+
+@Repository("memberDAO")
+public class MemberDAOimpl implements MemberDAO {
 	
 	@Inject
 	private SqlSession sql;

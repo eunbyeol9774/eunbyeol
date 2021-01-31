@@ -18,16 +18,14 @@
   <input type="password" id="userpass" name="userpass" />
  </p>
  <p>
-  <label for="username">NAME</label>
-  <input type="text" id="username" name="username" />
- </p>
- <p>
-   <button type="submit" id="submit" >가입</button>  
+   <button type="submit" id="submit" >로그인</button>  
  </p>
  <p>
   <a href="/">처음으로</a>
  </p>
- 
+  <c:if test="${msg == false}">
+   <p style="color:#f00;">로그인에 실패했습니다.</p>
+  </c:if>
 </form>
 </body>
 </html>

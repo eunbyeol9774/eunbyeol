@@ -21,19 +21,19 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
  MemberService service;
  
 
- @RequestMapping(value = "/register", method = RequestMethod.GET)
- public void getRegister() throws Exception {
-  logger.info("get register");
+ @RequestMapping(value = "/join", method = RequestMethod.GET)
+ public void getJoin() throws Exception {
+  logger.info("get join");
  }
 
 
- @RequestMapping(value = "/register", method = RequestMethod.POST)
- public void postRegister(MemberVO vo) throws Exception {
-  logger.info("post resister");
+ @RequestMapping(value = "/join", method = RequestMethod.POST)
+ public String postJoin(MemberVO vo) throws Exception {
+  logger.info("post join");
   
   	service.join(vo);
   	
- 
+  	return "redirect:/";
  }
 
 }

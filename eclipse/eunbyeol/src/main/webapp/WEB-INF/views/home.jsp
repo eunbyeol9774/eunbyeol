@@ -11,8 +11,10 @@
 	Sandwich Market!
 </h1>  
 </center>
-<div align = "right"><button class="btn" style="width: 70pt; height: 30pt"><a href="/login.jsp">login</a></button></div><br><br>
-<div align = "right"><button class="btn" style="width: 70pt; height: 30pt"><a href="/join.jsp">join</a></button></div>
+<div align = "right"><button class="btn" style="width: 70pt; height: 30pt"><a href="member/login">login</a></button></div><br><br>
+<div align = "right"><button class="btn" style="width: 70pt; height: 30pt"><a href="member/join">join</a></button></div>
 <button class="btn" style="width: 70pt; height: 30pt"><a href="/cart.jsp">cart</a></button>
+
+
 </body>
 </html>

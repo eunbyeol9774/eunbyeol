@@ -10,10 +10,6 @@
     <typeAliases>
           <typeAlias alias="projectVO" type="com.project.vo.ProjectVO"/>
           
-    
-         
     </typeAliases>
-  	
-  	
+</configuration>  	
 
-</configuration>
