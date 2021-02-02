@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.project.vo.MemberVO;
 
 
-@Repository("memberDAO")
+@Repository("MemberDAO")
 public class MemberDAOimpl implements MemberDAO {
 	
 	@Inject
@@ -20,6 +20,11 @@ public class MemberDAOimpl implements MemberDAO {
 	@Override
 	public void join(MemberVO vo) throws Exception {
 		sql.insert(namespace + ".join", vo);
+		
+	}
+	@Override
+	public MemberVO login(MemberVO vo) throws Exception {
+		return sql.selectOne(namespace + ".login",vo);
 	}
 
 

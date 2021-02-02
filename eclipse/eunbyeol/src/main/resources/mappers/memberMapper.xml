@@ -8,4 +8,11 @@
 			values(#{userid}, #{userpass} #{username} #{userphon} )
 	</insert>
 	 
+	 
+	 <select id="login" resultType="com.project.vo.MemberVO">
+	 	select userid, userpass
+	 		from member
+	 	where userid = #{userid}
+	 		and userpass = #{userpass}
+	 </select>
 </mapper>

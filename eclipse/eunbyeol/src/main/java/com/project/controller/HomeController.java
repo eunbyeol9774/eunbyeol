@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.project.service.ProjectService;
+import com.project.vo.MemberVO;
 import com.project.vo.ProjectVO;
 
 /**
@@ -95,7 +96,6 @@ public class HomeController {
 		return "redirect:/projectList.do";
 	}
  
-	
 
 	
 }
