@@ -11,6 +11,13 @@ public interface ProjectService {
 	
 	void updateProject(ProjectVO projectVO);
 	
-	void deleteProject(int proId);
+	void deleteProject(int pid);
+
+	static Object listProduct() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
+
  

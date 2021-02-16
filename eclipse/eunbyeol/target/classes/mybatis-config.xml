@@ -9,7 +9,7 @@
     </settings>
     <typeAliases>
           <typeAlias alias="projectVO" type="com.project.vo.ProjectVO"/>
-          
+          <typeAlias alias="memberVO" type="com.project.vo.MemberVO"/>
     </typeAliases>
 </configuration>  	
 

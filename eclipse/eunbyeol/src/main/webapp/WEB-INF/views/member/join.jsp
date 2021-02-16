@@ -22,6 +22,10 @@
   <input type="text" id="username" name="username" />
  </p>
  <p>
+  <label for="userphon">PHONE</label>
+  <input type="text" id="userphon" name="userphon" />
+ </p>
+ <p>
    <button type="submit" id="submit" >∞°¿‘</button>  
  </p>
  <p>
