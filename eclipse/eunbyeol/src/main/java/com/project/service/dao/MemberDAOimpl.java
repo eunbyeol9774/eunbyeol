@@ -15,16 +15,14 @@ public class MemberDAOimpl implements MemberDAO {
 	@Inject
 	private SqlSession sql;
 	
-	private static String namespace = "com.project.mappers.memberMapper";
-	
 	@Override
-	public void join(MemberVO vo) throws Exception {
-		sql.insert(namespace + ".join", vo);
+	public void memberjoin(MemberVO vo) throws Exception {
+		sql.insert("memberMapper.memberjoin", vo);
 		
 	}
 	@Override
-	public MemberVO login(MemberVO vo) throws Exception {
-		return sql.selectOne(namespace + ".login",vo);
+	public MemberVO memberlogin(MemberVO vo) throws Exception {
+		return sql.selectOne("memberMapper.memberlogin", vo);
 	}
 
 

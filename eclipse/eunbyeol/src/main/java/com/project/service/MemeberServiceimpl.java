@@ -19,13 +19,13 @@ public class MemeberServiceimpl implements MemberService {
 	private MemberDAO dao;
 	
 	@Override
-	public void join(MemberVO vo) throws Exception {
-		dao.join(vo);
+	public void memberjoin(MemberVO vo) throws Exception {
+		dao.memberjoin(vo);
 	}
 	
 	@Override
-	public MemberVO login(MemberVO vo) throws Exception {
-		return dao.login(vo);
+	public MemberVO memberlogin(MemberVO vo) throws Exception {
+		return dao.memberlogin(vo);
 	}
 	
 	@Override

@@ -34,7 +34,7 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
  public String postJoin(MemberVO vo) throws Exception {
 	 logger.info("post join");
   
-  		service.join(vo);
+  		service.memberjoin(vo);
   	
   		return "redirect:/";
  }
@@ -49,7 +49,7 @@ public String postlogin(MemberVO vo, HttpServletRequest req, RedirectAttributes 
 	logger.info("post login");
 		
 		HttpSession session = req.getSession();
-		MemberVO login = service.login(vo);
+		MemberVO login = service.memberlogin(vo);
 		
 		if(login == null) {
 			session.setAttribute("member", null);
