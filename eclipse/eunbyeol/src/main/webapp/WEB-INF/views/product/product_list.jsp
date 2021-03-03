@@ -8,21 +8,29 @@
 </head>
 <body>
 <h2>상품목록</h2>
-<table border = "1" width = "500px">
+<table border = "1">
     <tr>
         <th>상품ID</th>
         <th>상품사진</th>
         <th>상품명</th>
         <th>가격</th>
     </tr>
-<c:forEach var="row" items="${list }">
-    <tr align = "center">
-    <td>${row.pid }</td>
-    <td><img src="${path }/image/${row.pphoto}"
-    width="100" height = "100"></td>
-    <td>${row.pname }</td>
+<c:forEach var="row" items="${list}">
+
+    <tr>
+    <td>${row.pid}
+    </td>
     <td>
-    <fmt:formatNumber value="${row.price}" pattern="#,###" /> </td>
+    	<a href="${path}/product/product_detail/${row.pid}">
+   			<img src="${path}/image/${row.pphoto}" width="120px" height="110px">
+    	</a>
+    </td>
+    
+    <td>
+    	<a href="${path}/product/product_detail/${row.pid}">${row.pname}</a>
+    </td>
+    <td>
+    <fmt:formatNumber value="${row.pprice}" pattern="#,###"/> </td>
     </tr>
     
 </c:forEach>
@@ -30,5 +38,3 @@
 </body>
 </html>
 
-</body>
-</html>

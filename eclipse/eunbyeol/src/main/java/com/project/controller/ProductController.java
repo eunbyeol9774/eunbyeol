@@ -19,13 +19,14 @@ import com.project.service.ProjectService;
 public class ProductController {
 	 
 	 @Inject
-	 ProductService service;
+	 ProductService productService;
 	
 	 
-	@RequestMapping("product_list.do")
-	public ModelAndView list(ModelAndView mav) {
-        mav.setViewName("/product_list"); 
-		mav.addObject("list"); 
+	@RequestMapping("/product_list.do")
+	public ModelAndView list(ModelAndView mav) throws Exception  {
+        mav.setViewName("product/product_list"); 
+		
+		mav.addObject("list", productService.listProduct()); 
 		return mav;
 		
 	}

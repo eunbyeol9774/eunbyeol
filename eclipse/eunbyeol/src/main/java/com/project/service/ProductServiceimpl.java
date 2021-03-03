@@ -18,37 +18,9 @@ public class ProductServiceimpl implements ProductService {
 	ProductDAO productDao;
 	
 	@Override
-	public List<ProductVO> listProduct() {
+	public List<ProductVO> listProduct() throws Exception {
 		return productDao.listProduct();
 	}
 
-	@Override
-	public ProductVO detailProduct(int pid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public String fileInfo(int pid) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateProduct(ProductVO vo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteProduct(int pid) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void insertProduct(ProductVO vo) {
-		// TODO Auto-generated method stub
-		
-	}
 }
