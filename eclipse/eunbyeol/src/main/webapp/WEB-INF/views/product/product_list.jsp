@@ -1,29 +1,30 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>상품 목록</title>
 </head>
 <body>
-<h2>��ǰ���</h2>
+<h2>상품목록</h2>
 <table border = "1">
     <tr>
-        <th>��ǰID</th>
-        <th>��ǰ����</th>
-        <th>��ǰ��</th>
-        <th>����</th>
+        <th>상품ID</th>
+        <th>상품사진</th>
+        <th>상품명</th>
+        <th>가격</th>
     </tr>
 <c:forEach var="row" items="${list}">
 
     <tr>
-    <td>${row.pid}
+    <td><center>${row.pid}</center>
     </td>
     <td>
-    	<a href="${path}/product/product_detail/${row.pid}">
+    	
    			<img src="${path}/image/${row.pphoto}" width="120px" height="110px">
-    	</a>
+    	
     </td>
     
     <td>
@@ -35,6 +36,8 @@
     
 </c:forEach>
 </table>
+<br>
+<a href="/">처음으로</a>
 </body>
 </html>
 

@@ -21,6 +21,11 @@ public class ProductServiceimpl implements ProductService {
 	public List<ProductVO> listProduct() throws Exception {
 		return productDao.listProduct();
 	}
+	
+	@Override
+	public ProductVO detailProduct(int pid) {
+		return productDao.detailProduct(pid);
+	}
 
 
 }

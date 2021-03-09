@@ -7,4 +7,5 @@ public interface ProductService {
 	
 	List <ProductVO> listProduct() throws Exception;
 
+	ProductVO detailProduct(int pid);
 }

@@ -30,6 +30,13 @@ public class ProductController {
 		return mav;
 		
 	}
+	
+	@RequestMapping("/product_detail/{pid}")
+	public ModelAndView detail(ModelAndView mav) throws Exception  {
+        mav.setViewName("product/product_detail"); 
 		
-
+		int pid = 0;
+		mav.addObject("detail", productService.detailProduct(pid)); 
+		return mav;
+	}
 }

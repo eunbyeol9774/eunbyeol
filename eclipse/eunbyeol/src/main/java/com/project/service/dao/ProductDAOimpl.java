@@ -23,5 +23,9 @@ public class ProductDAOimpl implements ProductDAO {
 	
 }
 
+	    @Override
+	    public ProductVO detailProduct(int pid) {
+	        return sqlSession.selectOne("product.detailProduct",pid); 
 	
+}
 }
