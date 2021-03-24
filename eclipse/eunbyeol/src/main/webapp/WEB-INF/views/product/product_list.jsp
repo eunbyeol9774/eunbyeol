@@ -23,7 +23,7 @@
     </td>
     <td>
     	
-   			<img src="${path}/image/${row.pphoto}" width="120px" height="110px">
+   			<img src="/image/${row.pphoto}" width="120px" height="110px">
     	
     </td>
     

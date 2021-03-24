@@ -11,6 +11,7 @@
         	<typeAlias alias="projectVO" type="com.project.vo.ProjectVO"/>
           	<typeAlias alias="memberVO" type="com.project.vo.MemberVO"/>
           	<typeAlias alias="productVO" type="com.project.vo.ProductVO"/>
+          	<typeAlias alias="cartVO" type="com.project.vo.CartVO"/>
     </typeAliases>
 </configuration>  	
 

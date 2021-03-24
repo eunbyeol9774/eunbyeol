@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.service.MemberService;
@@ -18,8 +19,9 @@ import com.project.service.ProjectService;
 @RequestMapping("/product/*")
 public class ProductController {
 	 
-	 @Inject
+	@Inject
 	 ProductService productService;
+	
 	
 	 
 	@RequestMapping("/product_list.do")
@@ -32,11 +34,12 @@ public class ProductController {
 	}
 	
 	@RequestMapping("/product_detail/{pid}")
-	public ModelAndView detail(ModelAndView mav) throws Exception  {
+	public ModelAndView detail(
+			@PathVariable("pid")
+			int pid, ModelAndView mav) throws Exception  {
         mav.setViewName("product/product_detail"); 
 		
-		int pid = 0;
-		mav.addObject("detail", productService.detailProduct(pid)); 
+		mav.addObject("vo", productService.detailProduct(pid)); 
 		return mav;
 	}
 }
