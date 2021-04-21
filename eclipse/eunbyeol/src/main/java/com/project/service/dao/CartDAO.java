@@ -7,7 +7,6 @@ import com.project.vo.CartVO;
 public interface CartDAO {
 	
 
-	
 	List<CartVO> listCart(String user_id);
 	
 }

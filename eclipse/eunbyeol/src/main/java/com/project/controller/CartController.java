@@ -32,11 +32,11 @@ public class CartController {
  	public ModelAndView listcart(HttpSession session, ModelAndView mav) {
 	HashMap<String, Object> map = new HashMap<String,Object>();
     String user_id=(String)session.getAttribute("user_id");   
-    List<CartVO> listcart=cartService.listCart(user_id);//장바구니 목록
+    List<CartVO> listCart=cartService.listCart(user_id);//장바구니 목록
     
   
-         map.put("list", listcart); 
-         map.put("count", listcart.size()); 
+         map.put("list", listCart); 
+         map.put("count", listCart.size()); 
          mav.setViewName("cart/list");
          mav.addObject("map", map);
 

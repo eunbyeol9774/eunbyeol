@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="cartMapper">
+<mapper namespace="cart">
 
     
     <select id="listCart" resultType="com.project.vo.CartVO">
     	
-    	select cart_id, p.pid, c.user_id, username, pname, amount, pprice, (pprice*amount) money
+    	select c.cart_id, p.pid, c.user_id, m.userid, m.username, p.pname, c.amount, p.pprice, (p.pprice*c.amount) money
        	from member m, cart c, product p   
         where m.userid=c.user_id and c.pid=p.pid and c.user_id=#{user_id} order by cart_id
     		
     </select>
+    
 </mapper>

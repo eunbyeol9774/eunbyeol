@@ -7,15 +7,6 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<script>
-	$(document.ready(function){
-
-    	$("#btnList").click(function(){
-        	location.href="${path}/product/list.do";
-    	});
-
-	});
-</script>
 </head>
 <body>
 <h2>장바구니</h2>

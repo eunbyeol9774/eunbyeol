@@ -4,13 +4,9 @@ public class CartVO {
 	
 	private int cart_id;
 	private String user_id;
-	private String name;
+	private String username;
 	private int pid;
 	private String pname;
-	private int pprice;
-	private int money;
-	private int amount;
-	
 	public int getCart_id() {
 		return cart_id;
 	}
@@ -23,11 +19,11 @@ public class CartVO {
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-	public String getName() {
-		return name;
+	public String getUsername() {
+		return username;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public int getPid() {
 		return pid;
@@ -59,13 +55,8 @@ public class CartVO {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	public static int sumMoney(String userid) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	public void setUserid(String userid) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	private int pprice;
+	private int money;
+	private int amount;
 }
+	
