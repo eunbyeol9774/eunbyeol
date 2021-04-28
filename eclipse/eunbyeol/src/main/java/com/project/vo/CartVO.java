@@ -58,5 +58,8 @@ public class CartVO {
 	private int pprice;
 	private int money;
 	private int amount;
+	
+	
+	
 }
 	

@@ -10,17 +10,18 @@ import org.springframework.stereotype.Repository;
 
 import com.project.vo.CartVO;
 
-@Repository("CartDAO")
+@Repository("cartDAO")
+
+public class CartDAOimpl implements CartDAO{
 	
-public abstract class CartDAOimpl implements CartDAO {
-	    
-	    
-	    @Inject
-	    SqlSession sqlSession;
-	    
-	 
-	    @Override // ¸ñ·Ï
-	    public List<CartVO> listCart(String user_id) {
-	        return sqlSession.selectList("cart.listCart",user_id);
-	    }
+   @Inject
+   SqlSession sql;
+
+   @Override
+   	public List<CartVO> listCart(String user_id) {
+	   return sql.selectList("cartMapper.listCart", user_id);
+    
+   }
+   
+
 }
