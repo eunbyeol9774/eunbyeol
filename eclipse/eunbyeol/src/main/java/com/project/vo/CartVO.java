@@ -7,7 +7,9 @@ public class CartVO {
 	private String username;
 	private int pid;
 	private String pname;
-	
+	private int pprice;
+	private int money;
+	private int amount;
 	
 	public int getCart_id() {
 		return cart_id;
@@ -57,9 +59,7 @@ public class CartVO {
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
-	private int pprice;
-	private int money;
-	private int amount;
+	
 	public void setUserid(String userid) {
 		// TODO Auto-generated method stub
 		

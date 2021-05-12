@@ -50,11 +50,7 @@ public class CartServiceimpl implements CartService {
         dao.modifyCart(vo);
     }
     
-	@Override
-	public void insertcart(CartVO vo) {
-		
-		
-	}
+
 	@Override // 상품 확인
 	public int countCart(int pid, String userid) {
 		
@@ -67,5 +63,3 @@ public class CartServiceimpl implements CartService {
   
   
     
-    
-}

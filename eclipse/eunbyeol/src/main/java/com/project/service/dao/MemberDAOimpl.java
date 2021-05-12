@@ -1,6 +1,7 @@
 package com.project.service.dao;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
@@ -25,5 +26,15 @@ public class MemberDAOimpl implements MemberDAO {
 		return sql.selectOne("memberMapper.memberlogin", vo);
 	}
 
-
+	
+	 @Override
+	    public String loginCheck(MemberVO vo) { 
+		 return sql.selectOne("member.logincheck", vo);
+	 }
+	 
+	 @Override
+	 public void logout(HttpSession session) {
+		 
+	 }
+	 
 }

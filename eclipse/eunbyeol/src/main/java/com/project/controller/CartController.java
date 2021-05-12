@@ -58,7 +58,6 @@ public class CartController {
 		String userid=(String) session.getAttribute("userid");
 		vo.setUserid(userid);
 		int count = cartService.countCart(vo.getPid(),userid);
-		count == 0 ? cartService.updateCart(vo) : cartService.insert(vo);
 		if(count == 0) {
 			cartService.insert(vo);
 		} else {
@@ -91,7 +90,7 @@ public class CartController {
 		return "redirect:/cart/list.do";
 		}
  
- 	}
+ }
 	
 	
 	
@@ -99,8 +98,7 @@ public class CartController {
 	
 	
 	
-	}
-
+	
 
 	
 

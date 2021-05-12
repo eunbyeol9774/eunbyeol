@@ -10,12 +10,8 @@ public interface CartService {
 	List<CartVO> listCart(String userid);
 	
 	void insert (CartVO vo);
-
-	List<CartVO> cartMoney();
 	
-	void delete(int cart_id);
-	
-	void update (int cart_id);
+	void delete(int cart_id);	
 	
 	int sumMoney(String userid);
 	
@@ -23,7 +19,6 @@ public interface CartService {
 	
 	void modifyCart(CartVO vo);
 	
-	void insertcart(CartVO vo);
 	
 	int countCart(int pid, String userid);
 	

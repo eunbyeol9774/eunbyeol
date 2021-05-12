@@ -7,8 +7,10 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.vo.MemberVO;
@@ -39,35 +41,39 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
   		return "redirect:/";
  }
  
- @RequestMapping(value = "/login", method = RequestMethod.GET)
- public void getlogin() throws Exception {
-	 logger.info("get login");
+ @RequestMapping(value = "/login")
+ public String login() {
+	 return "member/login";
 	}
 
- @RequestMapping(value = "/login", method = RequestMethod.POST)
-public String postlogin(MemberVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
-	logger.info("post login");
-		
-		HttpSession session = req.getSession();
-		
-		MemberVO login = service.memberlogin(vo);
-		
-		if(login == null) {
-			session.setAttribute("member", null);
-			rttr.addFlashAttribute("msg", false);
-		}else {
-			session.setAttribute("member", login);  
-		}
-		
-		return "redirect:/";
+
+
+ @RequestMapping(value = "/logincheck.do")
+ public ModelAndView logincheck(@ModelAttribute MemberVO vo, HttpSession session) throws Exception {
+   
+     String name = service.loginCheck(vo, session);
+    
+     ModelAndView mav = new ModelAndView();
+
+     if (name != null) {         
+         mav.setViewName("home");        
+     }else {
+         mav.setViewName("member/login"); 
+         mav.addObject("message", "error"); 
+     }
+     return mav;
+ }    
+
+
+ @RequestMapping(value = "/logout.do")
+	public ModelAndView logout(HttpSession session, ModelAndView mav) throws Exception {
+	 service.logout(session); 
+     mav.setViewName("member/login");
+     mav.addObject("message","logout"); 
+     return mav; 
 	}
-	
- @RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout(HttpSession session) {
-		session.invalidate();
-		logger.info("ByeBye logout success");
-		return "redirect:/";
-	}
+ 
+ 
 
  
 }

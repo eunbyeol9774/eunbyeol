@@ -11,12 +11,8 @@ public interface CartDAO {
 	
 	void insert(CartVO vo);
 
-	List<CartVO> cartMoney();
-	
 	void delete(int cart_id);
 
-	void update (int cart_id);
-	
 	int sumMoney(String userid);
 	
 	int countCart(String userid, int pid);
@@ -25,7 +21,7 @@ public interface CartDAO {
 	
 	void modifyCart(CartVO vo);
 	
-	void insertcart(CartVO vo);
+	
 	
 	
 }

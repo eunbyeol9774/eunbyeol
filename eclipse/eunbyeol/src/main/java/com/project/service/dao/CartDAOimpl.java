@@ -28,11 +28,6 @@ public class CartDAOimpl implements CartDAO{
 	   sql.insert("cart.insert",vo);
    }
    
-   @Override
-   public List<CartVO> cartMoney() {
-      
-       return null;
-   }
    
    @Override // ªË¡¶
    public void delete(int cart_id) {
