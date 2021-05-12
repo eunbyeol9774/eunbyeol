@@ -3,10 +3,12 @@ package com.project.vo;
 public class CartVO {
 	
 	private int cart_id;
-	private String user_id;
+	private String userid;
 	private String username;
 	private int pid;
 	private String pname;
+	
+	
 	public int getCart_id() {
 		return cart_id;
 	}
@@ -14,10 +16,10 @@ public class CartVO {
 		this.cart_id = cart_id;
 	}
 	public String getUser_id() {
-		return user_id;
+		return userid;
 	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setUser_id(String userid) {
+		this.userid = userid;
 	}
 	public String getUsername() {
 		return username;
@@ -58,6 +60,14 @@ public class CartVO {
 	private int pprice;
 	private int money;
 	private int amount;
+	public void setUserid(String userid) {
+		// TODO Auto-generated method stub
+		
+	}
+	public static int sumMoney(String userid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 	

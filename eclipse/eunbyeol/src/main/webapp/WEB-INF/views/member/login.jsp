@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:if test="${member == null}">
 <form role="form" method="post" autocomplete="off">
  <p>
   <label for="userid">ID</label>
@@ -23,9 +24,13 @@
  <p>
   <a href="/">처음으로</a>
  </p>
-  <c:if test="${msg == false}">
-   <p style="color:#f00;">로그인에 실패했습니다.</p>
-  </c:if>
 </form>
+</c:if> 
+  <c:if test="${msg == false}">
+   	<p style="color:#f00;">로그인에 실패했습니다.</p>
+  </c:if>
+
+
+
 </body>
 </html>

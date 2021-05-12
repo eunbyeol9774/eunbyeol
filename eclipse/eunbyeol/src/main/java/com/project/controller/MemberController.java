@@ -49,13 +49,14 @@ public String postlogin(MemberVO vo, HttpServletRequest req, RedirectAttributes 
 	logger.info("post login");
 		
 		HttpSession session = req.getSession();
+		
 		MemberVO login = service.memberlogin(vo);
 		
 		if(login == null) {
 			session.setAttribute("member", null);
 			rttr.addFlashAttribute("msg", false);
 		}else {
-			session.setAttribute("member", login);
+			session.setAttribute("member", login);  
 		}
 		
 		return "redirect:/";
