@@ -10,7 +10,7 @@ public interface MemberDAO {
 	
 	public MemberVO memberlogin(MemberVO vo) throws Exception;
 
-	public String loginCheck(MemberVO vo);
+	public boolean loginCheck(MemberVO vo);
 	 
 	public void logout(HttpSession session);
 }

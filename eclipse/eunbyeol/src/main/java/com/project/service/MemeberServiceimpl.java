@@ -29,18 +29,20 @@ public class MemeberServiceimpl implements MemberService {
 		return dao.memberlogin(vo);
 	}
 	
-	public String loginCheck(MemberVO vo, HttpSession session) {
+	@Override
+	public boolean loginCheck(MemberVO vo, HttpSession session) throws Exception {
        
-       String name = dao.loginCheck(vo);
+       boolean result = dao.loginCheck(vo);
        
-        if (name != null) {
-                 
-            session.setAttribute("userid", vo.getUserid()); 
-            session.setAttribute("name", name);
+        if (result) {
+        	
+            MemberVO vo2 = memberlogin(vo);     
+            session.setAttribute("userid", vo2.getUserid()); 
+            session.setAttribute("username",vo2.getUsername());
           
         }
  
-        return name;
+        return result;
  
     }
 	@Override

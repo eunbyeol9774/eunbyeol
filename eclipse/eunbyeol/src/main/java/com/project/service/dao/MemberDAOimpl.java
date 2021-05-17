@@ -28,8 +28,9 @@ public class MemberDAOimpl implements MemberDAO {
 
 	
 	 @Override
-	    public String loginCheck(MemberVO vo) { 
-		 return sql.selectOne("member.logincheck", vo);
+	    public boolean loginCheck(MemberVO vo) { 
+		 String name = sql.selectOne("member.loginCheck", vo);
+		 return (name == null) ? false : true;
 	 }
 	 
 	 @Override

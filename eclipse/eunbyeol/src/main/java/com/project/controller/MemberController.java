@@ -51,12 +51,13 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
  @RequestMapping(value = "/logincheck.do")
  public ModelAndView logincheck(@ModelAttribute MemberVO vo, HttpSession session) throws Exception {
    
-     String name = service.loginCheck(vo, session);
+     boolean result = service.loginCheck(vo, session);
     
      ModelAndView mav = new ModelAndView();
 
-     if (name != null) {         
-         mav.setViewName("home");        
+     if (result == true) {         
+         mav.setViewName("home"); 
+         mav.addObject("message", "success"); 
      }else {
          mav.setViewName("member/login"); 
          mav.addObject("message", "error"); 
