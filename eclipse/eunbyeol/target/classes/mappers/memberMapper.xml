@@ -15,12 +15,5 @@
 	 	where userid = #{userid}
 	 		and userpass = #{userpass}
 	 </select>
-	 
-	 
-	 <select id = "loginCheck" resultType = "com.project.vo.MemberVO">
-   	  	select * from member
-    	where userid = #{userid} and userpass = #{userpass}
 
-
-    </select>
 </mapper>

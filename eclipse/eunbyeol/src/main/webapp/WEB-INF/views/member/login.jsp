@@ -6,31 +6,12 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-<script>
-
-$(document).ready(function){
-	
-    $("#btnlogin").click(function(){
-        var userid = $("#userid").val();
-        var userpass = $("#userpass").val();
-        if(userid==""){
-            alert("아이디를 입력하세요.");
-            $("#userid").focus();
-            return;
-        }
-        if(userpass == ""){
-            alert("비밀번호를 입력하세요.");
-            $("#userpass").focus();
-            return;
-        }
-        
-        document.form1.action = "${path}/member/logincheck.do";
-        document.form1.submit();
-    });
-});
-</script>
 </head>
 <body>
+<%
+     Object content = (Object)request.getAttribute("member");
+%>  
+<c:if test="${content == null}">
 
 	<form role="form" method="post" autocomplete="off">
  		<p>
@@ -42,24 +23,15 @@ $(document).ready(function){
   			<input type="password" id="userpass" name="userpass" />
  		</p>
  		<p>
-   			<button type="submit" id="submit" >로그인</button>  
- 		</p>
- 			<c:if test="${msg == 'nologin' }">
- 				<div style="color: red;">먼저 로그인 하세요.</div>
-           	</c:if> 
-            <c:if test="${msg == 'error' }">
-            	<div style="color: red;">아이디 또는 비밀번호가 일치하지 않습니다.</div>
-           	</c:if>  
-           	<c:if test="${msg == 'logout' }">
-                <div style="color: red;">로그아웃 되었습니다.</div>
-            </c:if>
- 		<p>
-  				<a href="/">처음으로</a>
- 		</p>
+   			<button type="submit" >로그인</button>  
+ 		</p>		
 </form>
-
- 
-
-
+</c:if>
+<c:if test="${msg == false}">
+	<p style="color:#f00;"> 로그인에 실패했습니다. 다시 입력해 주세요.</p>
+</c:if>
+<c:if test="${content != null}">
+	<p>${member.username} 님 환영합니다.</p>
+</c:if>
 </body>
 </html>

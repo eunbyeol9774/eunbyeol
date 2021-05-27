@@ -12,6 +12,4 @@ public interface MemberService {
 	
 	public void logout(HttpSession session) throws Exception;
 	
-	public boolean loginCheck(MemberVO vo, HttpSession session) throws Exception;
-	
 }

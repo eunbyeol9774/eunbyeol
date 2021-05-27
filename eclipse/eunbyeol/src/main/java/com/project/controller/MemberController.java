@@ -41,39 +41,38 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
   		return "redirect:/";
  }
  
- @RequestMapping(value = "/login")
+ @RequestMapping(value = "/login", method = RequestMethod.POST)
+
+ public String login(MemberVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
+	 logger.info("post login");
+     HttpSession session = req.getSession();
+     MemberVO login = service.memberlogin(vo);
+     if(login == null) {
+         session.setAttribute("member", null);
+         rttr.addFlashAttribute("msg", false);
+     }else {
+         session.setAttribute("member", login);
+
+     }
+     return "redirect:/";
+
+ }
+ 
+ @RequestMapping(value = "/login", method = RequestMethod.GET)
  public String login() {
 	 return "member/login";
 	}
 
 
+ @RequestMapping(value = "/logout")
+public String logout(HttpSession session) throws Exception{
+	 
+	 session.invalidate();
 
- @RequestMapping(value = "/logincheck.do")
- public ModelAndView logincheck(@ModelAttribute MemberVO vo, HttpSession session) throws Exception {
-   
-     boolean result = service.loginCheck(vo, session);
-    
-     ModelAndView mav = new ModelAndView();
+     return "redirect:/";
 
-     if (result == true) {         
-         mav.setViewName("home"); 
-         mav.addObject("message", "success"); 
-     }else {
-         mav.setViewName("member/login"); 
-         mav.addObject("message", "error"); 
-     }
-     return mav;
- }    
+ }
 
-
- @RequestMapping(value = "/logout.do")
-	public ModelAndView logout(HttpSession session, ModelAndView mav) throws Exception {
-	 service.logout(session); 
-     mav.setViewName("member/login");
-     mav.addObject("message","logout"); 
-     return mav; 
-	}
- 
  
 
  

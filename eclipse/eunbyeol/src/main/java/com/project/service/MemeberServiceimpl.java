@@ -30,24 +30,9 @@ public class MemeberServiceimpl implements MemberService {
 	}
 	
 	@Override
-	public boolean loginCheck(MemberVO vo, HttpSession session) throws Exception {
-       
-       boolean result = dao.loginCheck(vo);
-       
-        if (result) {
-        	
-            MemberVO vo2 = memberlogin(vo);     
-            session.setAttribute("userid", vo2.getUserid()); 
-            session.setAttribute("username",vo2.getUsername());
-          
-        }
- 
-        return result;
- 
-    }
-	@Override
 	public void logout(HttpSession session) throws Exception {
 		session.invalidate();
-			}
+	}
+
 
 }

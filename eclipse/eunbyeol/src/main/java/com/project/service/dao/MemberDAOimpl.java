@@ -26,16 +26,11 @@ public class MemberDAOimpl implements MemberDAO {
 		return sql.selectOne("memberMapper.memberlogin", vo);
 	}
 
-	
-	 @Override
-	    public boolean loginCheck(MemberVO vo) { 
-		 String name = sql.selectOne("member.loginCheck", vo);
-		 return (name == null) ? false : true;
-	 }
-	 
 	 @Override
 	 public void logout(HttpSession session) {
 		 
 	 }
+	
+	
 	 
 }
