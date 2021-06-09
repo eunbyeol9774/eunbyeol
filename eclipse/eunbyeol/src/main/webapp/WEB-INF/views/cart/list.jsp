@@ -11,7 +11,7 @@
 <body>
 <h2>장바구니</h2>
 <c:choose>
-    <c:when test="${map.count== 0}">장바구니가 비었습니다.</c:when>  
+    <c:when test="${map.count == 0}">장바구니가 비었습니다.</c:when>  
     <c:otherwise>
 
         <form id="form1" name="form1" method="post" action="${path}/cart/update.do">

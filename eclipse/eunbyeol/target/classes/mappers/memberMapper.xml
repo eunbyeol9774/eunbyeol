@@ -9,7 +9,7 @@
 	</insert>
 	 
 <!--로그인  -->	 
-	 <select id="memberlogin" resultType="MemberVO">
+	 <select id="memberlogin" resultType="com.project.vo.MemberVO">
 	 	select userid, userpass
 	 		from member
 	 	where userid = #{userid}

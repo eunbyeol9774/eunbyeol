@@ -20,7 +20,6 @@ body{
 </center>
 <br><br>
 <div align = "center"><button class="btn" style="width: 70pt; height: 30pt"><a href="member/login">login</a></button></div><br>
-<div align = "center"><button class="btn" style="width: 70pt; height: 30pt"><a href="member/logout">logout</a></button></div><br>
 <div align = "center"><button class="btn" style="width: 70pt; height: 30pt"><a href="member/join">join</a></button></div><br>
 <div align = "center"><button class="btn" style="width: 70pt; height: 30pt"><a href="product/product_list.do">product</a></button></div><br>
 <div align = "center"><button class="btn" style="width: 70pt; height: 30pt"><a href="cart/list.do">cart</a></button></div>

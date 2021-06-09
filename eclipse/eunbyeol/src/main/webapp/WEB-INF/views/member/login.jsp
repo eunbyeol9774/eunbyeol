@@ -9,11 +9,10 @@
 </head>
 <body>
 <%
-     Object content = (Object)request.getAttribute("member");
-%>  
+	Object content = (Object)request.getAttribute("member");
+%>
 <c:if test="${content == null}">
-
-	<form role="form" method="post" autocomplete="off">
+<form role="form" method="post" autocomplete="off">
  		<p>
   			<label for="userid">ID</label>
   			<input type="text" id="userid" name="userid" />
@@ -30,8 +29,12 @@
 <c:if test="${msg == false}">
 	<p style="color:#f00;"> 로그인에 실패했습니다. 다시 입력해 주세요.</p>
 </c:if>
-<c:if test="${content != null}">
-	<p>${member.username} 님 환영합니다.</p>
+
+<c:if test="${msg == true}">
+	<p>${content.username}님 환영합니다.</p>		
 </c:if>
+	<p>
+  		<a href="/">처음으로</a>
+ 	</p>
 </body>
 </html>

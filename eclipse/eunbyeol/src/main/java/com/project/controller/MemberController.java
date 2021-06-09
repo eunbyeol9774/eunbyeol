@@ -52,9 +52,9 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
          rttr.addFlashAttribute("msg", false);
      }else {
          session.setAttribute("member", login);
-
+         rttr.addFlashAttribute("msg", true);
      }
-     return "redirect:/";
+     return "redirect:/member/login";
 
  }
  

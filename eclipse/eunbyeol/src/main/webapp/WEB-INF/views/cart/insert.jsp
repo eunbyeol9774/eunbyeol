@@ -13,9 +13,7 @@
 <form method="post" action="${path}/cart/list.do">
 	<input type="hidden" name="pname" value="${product.pname}">
 	<input type="hidden" name="pprice" value="${product.pprice}"> 
-    <input type="hidden" name="amount" value="${cart.amount}">
-	
+    <input type="hidden" name="amount" value="${cart.amount}">	
 </form>
 </body>
 </html>
-
