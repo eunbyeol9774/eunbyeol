@@ -10,7 +10,7 @@
         where userid = #{userid}   
     </select>
     
-    <insert id="insert">
+    <insert id="insertCart">
     insert into cart (cart_id, userid, pid, amount)
     values(seq_cart.nextval, #{userid}, #{pid}, #{amount} )
     </insert> 

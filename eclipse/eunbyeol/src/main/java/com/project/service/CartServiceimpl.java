@@ -25,8 +25,8 @@ public class CartServiceimpl implements CartService {
     }
     
     @Override // 추가
-    public void insert(CartVO vo) {
-    	dao.insert(vo);
+    public void insertCart(CartVO vo) {
+    	dao.insertCart(vo);
     }
     
     @Override // 삭제

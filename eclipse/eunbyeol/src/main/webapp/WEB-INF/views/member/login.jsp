@@ -9,9 +9,11 @@
 </head>
 <body>
 <%
-	Object content = (Object)request.getAttribute("member");
-%>
+     Object content = (Object)request.getAttribute("member");
+%>  
+
 <c:if test="${content == null}">
+
 <form role="form" method="post" autocomplete="off">
  		<p>
   			<label for="userid">ID</label>
@@ -31,7 +33,7 @@
 </c:if>
 
 <c:if test="${msg == true}">
-	<p>${content.username}님 환영합니다.</p>		
+	<p> ${content.userid} 환영합니다.</p>	
 </c:if>
 	<p>
   		<a href="/">처음으로</a>

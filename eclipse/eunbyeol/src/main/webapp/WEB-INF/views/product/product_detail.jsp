@@ -31,7 +31,7 @@
 				
 				<tr align="center">
 					<td colspan="2">
-						<form name="form1" method="post" action="${path}/cart/list.do">
+						<form name="form1" method="post" action="${path}/cart/insert.do">
 							<input type="hidden" name="pid" value="${vo.pid}">
 							<select name="amount">
 								<c:forEach begin="1" end="5" var="i">

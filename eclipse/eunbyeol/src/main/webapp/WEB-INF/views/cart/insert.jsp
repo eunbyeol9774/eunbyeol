@@ -11,9 +11,26 @@
 <body>
 
 <form method="post" action="${path}/cart/list.do">
-	<input type="hidden" name="pname" value="${product.pname}">
-	<input type="hidden" name="pprice" value="${product.pprice}"> 
-    <input type="hidden" name="amount" value="${cart.amount}">	
+
+	<c:forEach var="row" items="${list}">
+		<tr>
+			<td> 상품명 </td>
+			<td> {row.pname} </td>
+		</tr>
+		<tr>
+			<td> 단가 </td>
+			<td> {row.pprice} </td>
+		</tr>
+		<tr>
+			<td> 수량 </td>
+			<td> {row.amount} </td>
+		</tr>
+		<tr>
+			<td> 금액 </td>
+			<td> {row.pprice} </td>
+		</tr>
+						   		 	
+   	</c:forEach>
 </form>
 </body>
 </html>

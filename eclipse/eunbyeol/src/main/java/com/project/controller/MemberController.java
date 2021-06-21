@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -43,17 +44,18 @@ private static final Logger logger = LoggerFactory.getLogger(MemberController.cl
  
  @RequestMapping(value = "/login", method = RequestMethod.POST)
 
- public String login(MemberVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
+ public String login(MemberVO vo, HttpServletRequest req, RedirectAttributes rttr, Model model) throws Exception{
 	 logger.info("post login");
      HttpSession session = req.getSession();
      MemberVO login = service.memberlogin(vo);
      if(login == null) {
-         session.setAttribute("member", null);
+         model.addAttribute("member", null);
          rttr.addFlashAttribute("msg", false);
      }else {
-         session.setAttribute("member", login);
+    	 model.addAttribute("member", login.getUserid());
          rttr.addFlashAttribute("msg", true);
      }
+     
      return "redirect:/member/login";
 
  }

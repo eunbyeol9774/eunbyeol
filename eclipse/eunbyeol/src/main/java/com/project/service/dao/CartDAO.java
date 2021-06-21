@@ -9,7 +9,7 @@ public interface CartDAO {
 
 	List<CartVO> listCart(String userid);
 	
-	void insert(CartVO vo);
+	void insertCart(CartVO vo);
 
 	void delete(int cart_id);
 

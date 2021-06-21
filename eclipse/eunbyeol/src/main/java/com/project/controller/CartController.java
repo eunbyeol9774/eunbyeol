@@ -53,15 +53,18 @@ public class CartController {
 	}
 	
 	@RequestMapping("insert.do") //장바구니 추가
-	public String insert(@ModelAttribute CartVO vo, HttpSession session) {
+	public String insertCart(@ModelAttribute CartVO vo, HttpSession session) {
 		
 		String userid=(String) session.getAttribute("userid");
+		
+		if(userid == null) {
+			
+			return "redirect:/member/login";
+			
+		}else{
+		
 		vo.setUserid(userid);
-		int count = cartService.countCart(vo.getPid(),userid);
-		if(count == 0) {
-			cartService.insert(vo);
-		} else {
-			cartService.updateCart(vo);
+		cartService.insertCart(vo);
 		}
 		return "redirect:/cart/list.do";
 		

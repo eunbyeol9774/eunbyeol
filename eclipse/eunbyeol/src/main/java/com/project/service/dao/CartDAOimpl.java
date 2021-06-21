@@ -24,8 +24,8 @@ public class CartDAOimpl implements CartDAO{
    }
    
    @Override
-   public void insert(CartVO vo) {
-	   sql.insert("cart.insert",vo);
+   public void insertCart(CartVO vo) {
+	   sql.insert("cart.insertCart",vo);
    }
    
    
