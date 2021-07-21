@@ -25,24 +25,24 @@ public class CartDAOimpl implements CartDAO{
    
    @Override
    public void insertCart(CartVO vo) {
-	   sql.insert("cart.insertCart",vo);
+	   sql.insert("cartMapper.insertCart",vo);
    }
    
    
    @Override // 삭제
    public void delete(int cart_id) {
-       sql.delete("cart.delete", cart_id);
+       sql.delete("cartMapper.delete", cart_id);
    }
 
    @Override // 상품 수량 변경
    public void updateCart(CartVO vo) {
-   	sql.selectOne("cart.sumCart", vo);
+   	sql.selectOne("cartMapper.sumCart", vo);
 
    }
 
    @Override // 합계
    public int sumMoney(String userid) {
-       return sql.selectOne("cart.sumMoney", userid); 
+       return sql.selectOne("cartMapper.sumMoney", userid); 
    }
 
    @Override // 동일한 상품 레코드 확인
@@ -53,7 +53,7 @@ public class CartDAOimpl implements CartDAO{
 
    @Override // 수정
    public void modifyCart(CartVO vo) {
-       sql.update("cart.modify", vo);
+       sql.update("cartMapper.modify", vo);
    }
 
 

@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.project.service.CartService;
 import com.project.vo.CartVO;
+import com.project.vo.MemberVO;
 import com.sun.javafx.collections.MappingChange.Map;
 
 
@@ -34,11 +35,13 @@ public class CartController {
 	public ModelAndView listcart(HttpSession session, ModelAndView mav) {
 	
 		HashMap<String, Object> map = new HashMap<String,Object>();
-		String userid=(String)session.getAttribute("userid"); 
 		
+		String userid=(String)session.getAttribute("userid"); 
+	
+	
 		if(userid!=null) {
     
-			List<CartVO> listCart=cartService.listCart(userid);//장바구니 목록
+		List<CartVO> listCart=cartService.listCart(userid);//장바구니 목록
     
   
          map.put("list", listCart); 
@@ -55,7 +58,9 @@ public class CartController {
 	@RequestMapping("insert.do") //장바구니 추가
 	public String insertCart(@ModelAttribute CartVO vo, HttpSession session) {
 		
-		String userid=(String) session.getAttribute("userid");
+		
+		MemberVO login = (MemberVO) session.getAttribute("member");
+		String userid = login.getUserid();
 		
 		if(userid == null) {
 			

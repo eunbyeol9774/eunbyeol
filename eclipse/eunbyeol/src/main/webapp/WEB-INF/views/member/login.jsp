@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=euc-kr" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-     Object content = (Object)request.getAttribute("member");
-%>  
 
-<c:if test="${content == null}">
+
+<c:if test="${member == null}">
 
 <form role="form" method="post" autocomplete="off">
  		<p>
@@ -32,8 +30,12 @@
 	<p style="color:#f00;"> 로그인에 실패했습니다. 다시 입력해 주세요.</p>
 </c:if>
 
-<c:if test="${msg == true}">
-	<p> ${content.userid} 환영합니다.</p>	
+<c:if test="${member != null}">
+	<p> ${member.userid}님 환영합니다.</p>	
+	
+	<br><br>
+	<a href="logout">logout</a>
+	<br><br>
 </c:if>
 	<p>
   		<a href="/">처음으로</a>
