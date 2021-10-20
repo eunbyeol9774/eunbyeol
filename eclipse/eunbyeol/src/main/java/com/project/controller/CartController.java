@@ -36,7 +36,9 @@ public class CartController {
 	
 		HashMap<String, Object> map = new HashMap<String,Object>();
 		
-		String userid=(String)session.getAttribute("userid"); 
+		MemberVO login = (MemberVO) session.getAttribute("member");
+		
+		String userid = login.getUserid(); 
 	
 	
 		if(userid!=null) {
@@ -59,7 +61,9 @@ public class CartController {
 	public String insertCart(@ModelAttribute CartVO vo, HttpSession session) {
 		
 		
+		
 		MemberVO login = (MemberVO) session.getAttribute("member");
+		
 		String userid = login.getUserid();
 		
 		if(userid == null) {
@@ -69,6 +73,7 @@ public class CartController {
 		}else{
 		
 		vo.setUserid(userid);
+				
 		cartService.insertCart(vo);
 		}
 		return "redirect:/cart/list.do";
