@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+
+<!--회원가입 -->
+	<insert id="memberjoin">
+		insert into member(userid, userpass, username, userphon)
+			values(#{userid}, #{userpass}, #{username}, #{userphon} )
+	</insert>
+	 
+<!--로그인  -->	 
+	 <select id="memberlogin" resultType="com.project.vo.MemberVO">
+	 	select userid, userpass
+	 		from member
+	 	where userid = #{userid}
+	 		and userpass = #{userpass}
+	 </select>
+
+</mapper>
